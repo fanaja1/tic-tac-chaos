@@ -17,8 +17,8 @@ body {
 
 .viewport {
   position: relative;
-  width: 100%;
-  padding-top: 100%;
+  width: 80%;
+  padding-top: 80%;
   overflow: hidden;
   margin: 20px auto;
 }

@@ -91,6 +91,27 @@ function App() {
     <div className="container">
       <h1>Tic Tac Chaos 😈</h1>
 
+      <div className="game-description" style={{
+        display: "flex",
+        justifyContent: "space-around",
+        marginBottom: "10px"
+      }}>
+        <div style={{ textAlign: "center" }}>
+          <div style={{ fontSize: "2rem", fontWeight: "bold", color: "#00ffcc" }}>3</div>
+          <div style={{ fontSize: "0.9rem", color: "#ccc" }}>vue nette</div>
+        </div>
+
+        <div style={{ textAlign: "center" }}>
+          <div style={{ fontSize: "2rem", fontWeight: "bold", color: "#ff6600" }}>4</div>
+          <div style={{ fontSize: "0.9rem", color: "#ccc" }}>à relier pour gagner</div>
+        </div>
+
+        <div style={{ textAlign: "center" }}>
+          <div style={{ fontSize: "2rem", fontWeight: "bold", color: "#ff0066" }}>5</div>
+          <div style={{ fontSize: "0.9rem", color: "#ccc" }}>grille totale</div>
+        </div>
+      </div>
+
       <div className="viewport">
         {/* Grille 5x5 */}
         <div
