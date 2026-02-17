@@ -4,36 +4,72 @@ body {
   color: white;
   font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;  /* centre horizontal */
-  align-items: center;      /* centre vertical */
-  height: 100vh;            /* prend toute la hauteur écran */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .container {
   text-align: center;
-  margin-top: 40px;
+  width: 90vw;
+  max-width: 500px; 
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  gap: 5px;
-  justify-content: center;
+.viewport {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
   margin: 20px auto;
 }
 
+/* Grille 5x5 entière */
+.map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 2%;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease;
+  filter: blur(0px);
+}
+
+/* Cellules */
 .cell {
-  width: 100px;
-  height: 100px;
   background: #222;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
   cursor: pointer;
-  transition: 0.2s;
 }
 
-.cell:hover {
-  background: #444;
+/* Masque pour zone centrale 3x3 */
+.clear-overlay {
+  position: absolute;
+  top: 20%;   /* 1/5 pour ligne 1 */
+  left: 20%;  /* 1/5 pour colonne 1 */
+  width: 60%; /* 3/5 largeur */
+  height: 60%; /* 3/5 hauteur */
+  pointer-events: none;
+  z-index: 2;
+  border: 3px solid #00ffcc;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.debug {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+  color: #0ff;
+  z-index: 10;
 }
